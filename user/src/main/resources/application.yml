@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+sping:
+  application:
+    name: user
+  datasource:
+    password: '1234567890'
+    url: jdbc:postgresql://localhost:5432/user
+    username: 'sportuser'
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: 'true'
+    show-sql: 'true'

@@ -6,7 +6,11 @@
 
   <groupId>com.ssportup</groupId>
   <artifactId>ssportup</artifactId>
+  <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>user</module>
+  </modules>
 
   <name>ssportup</name>
 
