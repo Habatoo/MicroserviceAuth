@@ -1,7 +1,7 @@
 package com.ssportup.user.controller;
 
-import com.ssportup.user.UserRegistrationRequest;
-import com.ssportup.user.UserService;
+import com.ssportup.user.request.UserRegistrationRequest;
+import com.ssportup.user.service.UserService;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

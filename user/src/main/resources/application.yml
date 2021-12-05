@@ -5,14 +5,16 @@ sping:
   application:
     name: user
   datasource:
-    password: '1234567890'
-    url: jdbc:postgresql://localhost:5432/user
-    username: 'sportuser'
+    url: jdbc:postgresql://localhost:5432/user?useSSL=false
+    username: sportuser
+    password: 1234567890
   jpa:
-    hibernate:
-      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: 'true'
-    show-sql: 'true'
+        temp:
+          use_jdbc_metadata_defaults: false
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    hibernate:
+      ddl-auto: create  #//!!!!
+    show-sql: true

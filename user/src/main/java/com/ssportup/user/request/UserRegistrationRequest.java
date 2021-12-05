@@ -1,4 +1,4 @@
-package com.ssportup.user;
+package com.ssportup.user.request;
 
 import lombok.*;
 

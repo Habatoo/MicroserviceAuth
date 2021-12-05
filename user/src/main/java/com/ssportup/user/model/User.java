@@ -1,4 +1,4 @@
-package com.ssportup.user;
+package com.ssportup.user.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,12 +16,12 @@ public class User {
 
     @Id
     @SequenceGenerator(
-            name = "user_id_sequence",
+            name = "customer_id_sequence",
             sequenceName = "customer_id_sequence"
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "user_id_sequence"
+            generator = "customer_id_sequence"
     )
     private Long user_id;
     private String user_name;
