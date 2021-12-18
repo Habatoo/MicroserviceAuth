@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 3001
 
 sping:
   application:
@@ -18,3 +18,5 @@ sping:
     hibernate:
       ddl-auto: create  #//!!!!
     show-sql: true
+
+
