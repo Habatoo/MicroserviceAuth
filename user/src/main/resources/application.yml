@@ -1,22 +1,19 @@
 server:
-  port: 3001
-
-sping:
+  port: 8900
+spring:
   application:
     name: user
   datasource:
-    url: jdbc:postgresql://localhost:5432/user?useSSL=false
-    username: sportuser
     password: 1234567890
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: sportuser
   jpa:
+    hibernate:
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-        temp:
-          use_jdbc_metadata_defaults: false
-    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
-    hibernate:
-      ddl-auto: create  #//!!!!
+        format_sql: true
     show-sql: true
 
 

@@ -1,20 +1,22 @@
-package com.ssportup.user.controller;
+package com.ssportup.user;
 
-import com.ssportup.user.model.User;
-import com.ssportup.user.request.UserRegistrationRequest;
-import com.ssportup.user.service.UserService;
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 /**
- * Класс конфигурации контроллера.
+ * Класс конфигурации контроллера с основными методами работы с
+ * сущностью {@link User}.
  *
  * @author habatoo
+ * @version 0.001
  */
 @Slf4j
 @RestController
@@ -25,6 +27,9 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @Autowired
+    UserRepository userRepository;
+
     @PostMapping
     public void registerUser(@RequestBody UserRegistrationRequest userRequest) {
         log.info("new user registration {}", userRequest);
@@ -33,14 +38,12 @@ public class UserController {
 
     @GetMapping
     public List<User> getAllCustomers() {
-        // TODO List of users
-        return null;
+        return userRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable Long id) {
-        // TODO user by id
-        return null;
+    public Optional<User> getUserById(@PathVariable Long id) {
+        return userRepository.findByUserId(id);
     }
 
     @GetMapping("info")
