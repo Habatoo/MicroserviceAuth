@@ -1,4 +1,4 @@
-package com.ssportup.user;
+package com.ssportup.event;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -6,50 +6,49 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
 /**
  * Класс конфигурации контроллера с основными методами работы с
- * сущностью {@link User}.
+ * сущностью {@link Event}.
  *
  * @author habatoo
  * @version 0.001
  */
 @Slf4j
 @RestController
-@RequestMapping("api/v1/users")
+@RequestMapping("api/v1/events")
 @Data
 @NoArgsConstructor
-public class UserController {
+public class EventController {
     @Autowired
-    UserService userService;
+    EventService eventService;
 
     @Autowired
-    UserRepository userRepository;
+    EventRepository eventRepository;
 
     @PostMapping
-    public void registerUser(@RequestBody UserRegistrationRequest userRequest) {
-        log.info("new user registration {}", userRequest);
-        userService.registerUser(userRequest);
+    public void registerUser(@RequestBody EventRegistrationRequest eventRequest) {
+        log.info("new event registration {}", eventRequest);
+        eventService.registerEvent(eventRequest);
     }
 
     @GetMapping
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
+    public List<Event> getAllEvents() {
+        return eventRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<User> getUserById(@PathVariable Long id) {
-        return userRepository.findByUserId(id);
+    public Optional<Event> getEventById(@PathVariable Long id) {
+        return eventRepository.findByEventId(id);
     }
 
     @GetMapping("info")
     public String info() {
         log.info("method .info invoked");
-        return "User " + new Date();
+        return "Event " + new Date();
 
     }
 }

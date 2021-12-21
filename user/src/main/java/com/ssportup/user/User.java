@@ -13,7 +13,7 @@ import javax.persistence.*;
  * @author habatoo
  *
  * @param "userId" - primary key таблицы usr.
- * @param "userName" - имя пользователя - предпоалагается строковоя переменная Имя + Фамилия.
+ * @param "userName" - имя пользователя - предпоалагается строковоя переменная.
  * @param "userPassword" - пароль, в БД хранится в виде хешированном виде.
  * @param "userEmail" - email пользователя.
  */

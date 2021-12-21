@@ -183,13 +183,13 @@ class UserControllerTest {
 
     /**
      * Метод тестирует отображение строки с текущим временем и датой.
-     * Сценарий предполагает отображение строки содржащей значение "Controller"
+     * Сценарий предполагает отображение строки содржащей значение "User"
      */
     @Test
     void info_Test() throws Exception{
         this.mockMvc.perform(get("/api/v1/users/info"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_PLAIN))
-                .andReturn().getResponse().getContentAsString().contains("Controller");
+                .andReturn().getResponse().getContentAsString().contains("User");
     }
 }

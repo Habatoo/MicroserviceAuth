@@ -1,19 +1,9 @@
-services:
-  postgres:
-    container_name: postgres
-    image: postgres
-    environment:
-      POSTGRES_USER: sportuser
-      POSTGRES_PASSWORD: 1234567890
-      PGDATA: /data/postgres
-    volumes:
-      - postgres:/data/postgres
-    ports:
-      - "5432:5432"
-    networks:
-      - postgres
-    restart: unless-stopped
+# docker stop $(docker ps -a -q)
+# docker rm $(docker ps -a -q)
+# sudo docker run --rm --name postgres_e -e POSTGRES_PASSWORD=1234567890 -e POSTGRES_USER=sportuser -e POSTGRES_DB=postgres_e -d -p 5434:5432 -v postgres_e:/var/lib/postgresl/postgres_e  postgres
+# sudo docker run --rm --name postgres_u -e POSTGRES_PASSWORD=1234567890 -e POSTGRES_USER=sportuser -e POSTGRES_DB=postgres_u -d -p 5433:5432 -v postgres_u:/var/lib/postgresl/postgres_u  postgres
 
+services:
   pgadmin:
     container_name: pgadmin
     image: dpage/pgadmin4
@@ -34,5 +24,4 @@ networks:
     driver: bridge
 
 volumes:
-  postgres:
   pgadmin:
