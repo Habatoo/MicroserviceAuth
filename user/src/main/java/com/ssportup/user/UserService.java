@@ -1,6 +1,6 @@
 package com.ssportup.user;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,17 +11,14 @@ import org.springframework.stereotype.Service;
  * @version 0.001
  */
 @Service
+@AllArgsConstructor
 public class UserService {
 
     private final UserRepository userRepository;
 
-    @Autowired
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
-
     /**
      * Метод регистрирует нового пользователя по переданным данным
+     *
      * @param userRequest объект запроса с полями сущности {@link User}.
      */
     public void registerUser(UserRegistrationRequest userRequest) {

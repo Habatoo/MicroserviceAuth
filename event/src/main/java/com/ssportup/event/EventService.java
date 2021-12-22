@@ -1,6 +1,6 @@
 package com.ssportup.event;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,17 +11,14 @@ import org.springframework.stereotype.Service;
  * @version 0.001
  */
 @Service
+@AllArgsConstructor
 public class EventService {
 
     private final EventRepository eventRepository;
 
-    @Autowired
-    public EventService(EventRepository eventRepository) {
-        this.eventRepository = eventRepository;
-    }
-
     /**
      * Метод регистрирует новое событие по переданным данным
+     *
      * @param eventRequest объект запроса с полями сущности {@link Event}.
      */
     public void registerEvent(EventRegistrationRequest eventRequest) {
