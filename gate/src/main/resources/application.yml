@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:3001/eureka/
+
+spring:
+  application:
+    name: gate
+
+zuul:
+  routes:
+    users:
+      path: /users/**
+      serviceId: user
+    events:
+      path: /events/**
+      serviceId: event

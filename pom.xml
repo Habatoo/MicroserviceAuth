@@ -12,6 +12,7 @@
     <module>user</module>
     <module>event</module>
     <module>eureka</module>
+    <module>gate</module>
   </modules>
 
   <name>ssportup</name>
