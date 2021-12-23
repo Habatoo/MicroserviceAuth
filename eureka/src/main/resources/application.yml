@@ -1,0 +1,15 @@
+# sudo docker run --rm --name postgres_e -e POSTGRES_PASSWORD=1234567890 -e POSTGRES_USER=sportuser -e POSTGRES_DB=postgres_e -d -p 5434:5432 -v postgres_e:/var/lib/postgresl/postgres_e  postgres
+server:
+  port: 3001
+
+spring:
+  application:
+    name: eureka
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  instance:
+    hostname: localhost

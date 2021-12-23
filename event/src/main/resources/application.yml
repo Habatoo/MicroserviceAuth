@@ -1,9 +1,15 @@
 # sudo docker run --rm --name postgres_e -e POSTGRES_PASSWORD=1234567890 -e POSTGRES_USER=sportuser -e POSTGRES_DB=postgres_e -d -p 5434:5432 -v postgres_e:/var/lib/postgresl/postgres_e  postgres
 server:
   port: 8901
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:3001/eureka/
+
 spring:
   application:
-    name: user
+    name: event
   datasource:
     password: 1234567890
     url: jdbc:postgresql://localhost:5434/postgres_e
