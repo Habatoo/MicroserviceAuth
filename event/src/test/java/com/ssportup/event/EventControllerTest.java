@@ -16,8 +16,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -107,8 +110,21 @@ class EventControllerTest {
     void getEventService_Test() {
     }
 
+    /**
+     * Тестирование методов {@link EventRepository}
+     */
     @Test
     void getEventRepository_Test() {
+        assertTrue(eventRepository.existsByEventTitle("jogging"));
+        assertFalse(eventRepository.existsByEventTitle("jogging2"));
+        assertFalse(eventRepository.existsByEventId(1L));
+        assertFalse(eventRepository.existsByEventId(10L));
+
+        assertThat(eventRepository.findByEventTitle("jogging2").equals(Optional.empty()));
+        assertThat(eventRepository.findByEventTitle("jogging").equals(Event.class));
+
+        assertThat(eventRepository.findByEventId(1L).equals(Event.class));
+        assertThat(eventRepository.findByEventId(10L).equals(Optional.empty()));
     }
 
     @Test
