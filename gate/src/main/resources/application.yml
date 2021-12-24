@@ -1,20 +1,28 @@
 server:
-  port: 8080
+  port: 9000
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:3001/eureka/
+  instance:
+    prefer-ip-address: true
+
+ribbon:
+  eureka:
+    enabled: true
 
 spring:
   application:
     name: gate
+  zipkin:
+    base-url: http://localhost:9411
 
 zuul:
   routes:
     users:
       path: /users/**
-      serviceId: user
-    events:
-      path: /events/**
-      serviceId: event
+#      serviceId: user
+#    events:
+#      path: /events/**
+#      serviceId: event

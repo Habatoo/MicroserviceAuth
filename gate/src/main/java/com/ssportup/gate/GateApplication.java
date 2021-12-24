@@ -13,7 +13,6 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
  */
 @SpringBootApplication
 @EnableZuulProxy
-@EnableEurekaClient
 public class GateApplication {
     public static void main(String[] args) {
         SpringApplication.run(GateApplication.class, args);
