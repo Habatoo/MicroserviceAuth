@@ -1,4 +1,3 @@
-# sudo docker run --rm --name postgres_u -e POSTGRES_PASSWORD=1234567890 -e POSTGRES_USER=sportuser -e POSTGRES_DB=postgres_u -d -p 5433:5432 -v postgres_u:/var/lib/postgresl/postgres_u  postgres
 server:
   port: 8900
 

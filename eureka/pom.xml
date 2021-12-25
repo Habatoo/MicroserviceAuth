@@ -14,19 +14,21 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <spring-cloud.version>2021.0.0</spring-cloud.version>
+        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+        <spring-cloud.zipkin.version>2.1.0.RELEASE</spring-cloud.zipkin.version>
+        <spring-cloud-netflix-eureka-server.version>2.1.0.RELEASE</spring-cloud-netflix-eureka-server.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <version>${spring-cloud-netflix-eureka-server.version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-zipkin -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
-            <version>2.2.8.RELEASE</version>
+            <version>${spring-cloud.zipkin.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

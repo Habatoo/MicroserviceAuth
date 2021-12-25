@@ -186,7 +186,7 @@ class UserControllerTest {
     void info_Test() throws Exception{
         this.mockMvc.perform(get("/api/v1/users/info"))
                 .andExpect(status().isOk())
-                .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_PLAIN))
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON_VALUE))
                 .andReturn().getResponse().getContentAsString().contains("User");
     }
 }

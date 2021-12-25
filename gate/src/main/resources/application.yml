@@ -22,7 +22,7 @@ zuul:
   routes:
     users:
       path: /users/**
-#      serviceId: user
-#    events:
-#      path: /events/**
-#      serviceId: event
+      serviceId: user
+    events:
+      path: /events/**
+      serviceId: event
