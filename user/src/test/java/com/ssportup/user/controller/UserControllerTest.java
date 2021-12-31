@@ -34,14 +34,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  *
  * @author habatoo
  */
-@RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
 @TestPropertySource(properties = {"spring.config.location=classpath:application-test.yml"})
 @Sql(scripts = {"classpath:create-user-before.sql"}, executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
 @Sql(scripts = {"classpath:create-user-after.sql"}, executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
 @ExtendWith(MockitoExtension.class)
-class UserControllerTest {
+public class UserControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
@@ -55,7 +54,7 @@ class UserControllerTest {
      * Инициализация экземпляров тестируемого класса {@link User}.
      */
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         User user = new User(
                 4L,
                 "test",
@@ -68,7 +67,7 @@ class UserControllerTest {
      * Очистка экземпляров тестируемого класса {@link User}.
      */
     @AfterEach
-    void tearDown() {
+    public void tearDown() {
         userRepository.deleteAll();
     }
 
@@ -114,8 +113,8 @@ class UserControllerTest {
      *
      */
     @Test
-    void registerUser_Test()  throws Exception {
-        this.mockMvc.perform(post("/api/v1/users")
+    public void registerUser_Test()  throws Exception {
+        this.mockMvc.perform(post("/")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{ \"userName\": \"testmod\", \"userEmail\":" +
                                 " \"testmod@mod.com\", \"userPassword\": \"12345\" }"))
@@ -131,7 +130,7 @@ class UserControllerTest {
      * Сценирий предполагает отображение трех заранее созжанных пользователей.
      */
     @Test
-    void getAllCustomers_Test() throws Exception{
+    public void getAllCustomers_Test() throws Exception{
         String resp = "[{\"userId\":5,\"userName\":\"administrator\",\"userEmail\":\"admin@a.com\",\"userPassword\":" +
                 "\"$2a$10$7JGsM41kbXX7/vJ2lc3pb.wdoIoANWTme.NErCU2TSv1RcPnDaBaS\"},{\"userId\":6,\"userName\":" +
                 "\"moderator\",\"userEmail\":\"moderator@a.com\",\"userPassword\"" +
@@ -139,7 +138,7 @@ class UserControllerTest {
                 "{\"userId\":7,\"userName\":\"user\",\"userEmail\":\"user@a.com\"," +
                 "\"userPassword\":\"$2a$10$7JGsM41kbXX7/vJ2lc3pb.wdoIoANWTme.NErCU2TSv1RcPnDaBaS\"}]";
 
-        this.mockMvc.perform(get("/api/v1/users"))
+        this.mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON_VALUE))
                 .andReturn().getResponse().getContentAsString().equals(resp);
@@ -151,11 +150,11 @@ class UserControllerTest {
      * userId = 5.
      */
     @Test
-    void getUserByIdSuccess_Test() throws Exception {
+    public void getUserByIdSuccess_Test() throws Exception {
         String resp = "{\"userId\":5,\"userName\":\"administrator\",\"userEmail\":\"admin@a.com\",\"userPassword\"" +
                 ":\"$2a$10$7JGsM41kbXX7/vJ2lc3pb.wdoIoANWTme.NErCU2TSv1RcPnDaBaS\"}";
 
-        this.mockMvc.perform(get("/api/v1/users/5"))
+        this.mockMvc.perform(get("/5"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON_VALUE))
                 .andReturn().getResponse().getContentAsString().equals(resp);
@@ -168,10 +167,10 @@ class UserControllerTest {
      * с userId = 100.
      */
     @Test
-    void getUserByIdFail_Test() throws Exception {
+    public void getUserByIdFail_Test() throws Exception {
         String resp = "";
 
-        this.mockMvc.perform(get("/api/v1/users/100"))
+        this.mockMvc.perform(get("/users/100"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON_VALUE))
                 .andReturn().getResponse().getContentAsString().equals(resp);
@@ -183,10 +182,10 @@ class UserControllerTest {
      * Сценарий предполагает отображение строки содржащей значение "User"
      */
     @Test
-    void info_Test() throws Exception{
-        this.mockMvc.perform(get("/api/v1/users/info"))
+    public void info_Test() throws Exception{
+        this.mockMvc.perform(get("/info"))
                 .andExpect(status().isOk())
-                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_PLAIN))
                 .andReturn().getResponse().getContentAsString().contains("User");
     }
 }

@@ -13,7 +13,7 @@ spring:
     name: user
   datasource:
     password: 1234567890
-    url: jdbc:postgresql://localhost:5433/postgres_u
+    url: jdbc:postgresql://localhost:5432/postgres
     username: sportuser
   jpa:
     hibernate:

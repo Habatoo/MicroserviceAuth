@@ -31,14 +31,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  *
  * @author habatoo
  */
-@RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
 @TestPropertySource(properties = {"spring.config.location=classpath:application-test.yml"})
 @Sql(scripts = {"classpath:create-event-before.sql"}, executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
 @Sql(scripts = {"classpath:create-event-after.sql"}, executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
 @ExtendWith(MockitoExtension.class)
-class EventControllerTest {
+public class EventControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
@@ -83,15 +82,15 @@ class EventControllerTest {
     }
 
     @Test
-    void createEvent_Test() {
+    public void createEvent_Test() {
     }
 
     @Test
-    void getAllEvents_Test() {
+    public void getAllEvents_Test() {
     }
 
     @Test
-    void getEventById_Test() {
+    public void getEventById_Test() {
     }
 
     /**
@@ -99,22 +98,22 @@ class EventControllerTest {
      * Сценарий предполагает отображение строки содржащей значение "Event"
      */
     @Test
-    void info_Test() throws Exception {
-        this.mockMvc.perform(get("/api/v1/events/info"))
+    public void info_Test() throws Exception {
+        this.mockMvc.perform(get("/info"))
                 .andExpect(status().isOk())
-                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_PLAIN))
                 .andReturn().getResponse().getContentAsString().contains("Event");
     }
 
     @Test
-    void getEventService_Test() {
+    public void getEventService_Test() {
     }
 
     /**
      * Тестирование методов {@link EventRepository}
      */
     @Test
-    void getEventRepository_Test() {
+    public void getEventRepository_Test() {
         assertTrue(eventRepository.existsByEventTitle("jogging"));
         assertFalse(eventRepository.existsByEventTitle("jogging2"));
         assertFalse(eventRepository.existsByEventId(1L));
@@ -128,10 +127,10 @@ class EventControllerTest {
     }
 
     @Test
-    void setEventService_Test() {
+    public void setEventService_Test() {
     }
 
     @Test
-    void setEventRepository_Test() {
+    public void setEventRepository_Test() {
     }
 }

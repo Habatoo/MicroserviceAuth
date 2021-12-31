@@ -18,7 +18,6 @@ import java.util.Optional;
  */
 @Slf4j
 @RestController
-//@RequestMapping("api/v1/users")
 @Data
 @AllArgsConstructor
 public class UserController {
@@ -29,7 +28,7 @@ public class UserController {
 
     /**
      * Метод создания объекта типа {@link User} при запросе методом
-     * POST по адресу "api/v1/users"
+     * POST по адресу "/"
      *
      * @param userRequest объект запроса с параметрами для формирования объекта
      */
@@ -41,7 +40,7 @@ public class UserController {
 
     /**
      * Метод отображения списка всех пользователей при запросе
-     * методом GET по адресу "api/v1/users"
+     * методом GET по адресу "/"
      *
      * @return список объектов {@link User}
      */
@@ -63,7 +62,7 @@ public class UserController {
 
     /**
      * Метод для проверки корректности работы модуля {@link User}
-     * при запросе методом GET по адресу "api/v1/users/info"
+     * при запросе методом GET по адресу "/info"
      *
      * @return возвращает объект "User " {@link String} и текущаю дату.
      */

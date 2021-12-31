@@ -11,11 +11,18 @@
 
     <artifactId>user</artifactId>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-<!--        <spring-cloud-netflix-eureka-client.version>2.2.8.RELEASE</spring-cloud-netflix-eureka-client.version>-->
-<!--        <spring-cloud-starter-zipkin.version>2.2.8.RELEASE</spring-cloud-starter-zipkin.version>-->
 
         <spring-cloud-netflix-eureka-client.version>2.1.0.RELEASE</spring-cloud-netflix-eureka-client.version>
         <spring-cloud-starter-zipkin.version>2.1.0.RELEASE</spring-cloud-starter-zipkin.version>

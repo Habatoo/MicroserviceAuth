@@ -18,7 +18,6 @@ import java.util.Optional;
  */
 @Slf4j
 @RestController
-//@RequestMapping("api/v1/events")
 @Data
 @AllArgsConstructor
 public class EventController {
@@ -29,7 +28,7 @@ public class EventController {
 
     /**
      * Метод создания объекта типа {@link Event} при запросе методом
-     * POST по адресу "api/v1/events"
+     * POST по адресу "/"
      *
      * @param eventRequest объект запроса с параметрами для формирования объекта
      *                     типа {@link Event}
@@ -42,7 +41,7 @@ public class EventController {
 
     /**
      * Метод отображения списка всех событий при запросе
-     * методом GET по адресу "api/v1/events"
+     * методом GET по адресу "/"
      *
      * @return список объектов {@link Event}
      */
@@ -64,7 +63,7 @@ public class EventController {
 
     /**
      * Метод для проверки корректности работы модуля {@link Event}
-     * при запросе методом GET по адресу "api/v1/events/info"
+     * при запросе методом GET по адресу "/info"
      *
      * @return возвращает объект {@link String} "Event " и текущаю дату.
      */

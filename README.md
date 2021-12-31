@@ -1,19 +1,8 @@
 
 #### Перед стартом поднимаем две БД для модулей user и event
-БД для модуля user
-<code>
-sudo docker run --rm --name postgres_u -e POSTGRES_PASSWORD=1234567890 -e POSTGRES_USER=sportuser -e POSTGRES_DB=postgres_u -d -p 5433:5432 -v postgres_u:/var/lib/postgresl/postgres_u  postgres
-</code>
-<br>
-<br>
-БД для модуля event
-<code>
-sudo docker run --rm --name postgres_e -e POSTGRES_PASSWORD=1234567890 -e POSTGRES_USER=sportuser -e POSTGRES_DB=postgres_e -d -p 5434:5432 -v postgres_e:/var/lib/postgresl/postgres_e  postgres
-</code>
-<br>
 ### zipkin поднимаем из котейнера - в коде не пишем
 <code>
-docker run -d -p 9411:9411 openzipkin/zipkin
+docker-compose up
 </code>
 <br>
 <br>
