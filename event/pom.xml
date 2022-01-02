@@ -35,11 +35,6 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
             <version>${spring-cloud-netflix-eureka-client.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zipkin</artifactId>
-            <version>${spring-cloud-starter-zipkin.version}</version>
-        </dependency>
         <!-- DB  -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

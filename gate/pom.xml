@@ -16,7 +16,6 @@
         <maven.compiler.target>8</maven.compiler.target>
         <spring-cloud-netflix-eureka-client.version>2.1.0.RELEASE</spring-cloud-netflix-eureka-client.version>
         <spring-cloud-starter-netflix-zuul.version>2.1.0.RELEASE</spring-cloud-starter-netflix-zuul.version>
-        <spring-cloud-starter-zipkin.version>2.1.0.RELEASE</spring-cloud-starter-zipkin.version>
     </properties>
 
     <dependencies>
@@ -25,11 +24,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
             <version>${spring-cloud-netflix-eureka-client.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zipkin</artifactId>
-            <version>${spring-cloud-starter-zipkin.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

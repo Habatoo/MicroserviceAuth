@@ -1,23 +1,29 @@
 server:
-  port: 8901
+  port: ${PORT:8901}
 
 eureka:
+  instance:
+    hostname: user.herokuapp.com
+    homePageUrl: https://${eureka.instance.hostName}/
+    home-page-url-path: https://${eureka.instance.hostName}
+    non-secure-port-enabled: true
+    secure-port-enabled: true
   client:
     serviceUrl:
-      defaultZone: http://localhost:3001/eureka/
+      defaultZone: http://eureka.herokuapp.com/eureka/
+      non-secure-port: 80
+      secure-port: 443
 
 spring:
-  zipkin:
-    base-url: http://localhost:9411
   application:
     name: event
   datasource:
-    password: 1234567890
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: sportuser
+    password: ${DATABASE_PASSWORD}
+    url: jdbc:postgresql://${DATABASE_URL}
+    username: ${USER}
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
