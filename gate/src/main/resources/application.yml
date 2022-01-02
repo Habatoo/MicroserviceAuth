@@ -1,12 +1,13 @@
 server:
-  port: 9000
+  port: ${PORT:8080}
 
 eureka:
+  instance:
+    hostname: gate.herokuapp.com
+    homePageUrl: https://${eureka.instance.hostName}/
   client:
     serviceUrl:
-      defaultZone: http://localhost:3001/eureka/
-  instance:
-    prefer-ip-address: true
+      defaultZone: http://eureka.herokuapp.com/eureka/
 
 ribbon:
   eureka:
@@ -15,8 +16,6 @@ ribbon:
 spring:
   application:
     name: gate
-  zipkin:
-    base-url: http://localhost:9411
 
 zuul:
   routes:

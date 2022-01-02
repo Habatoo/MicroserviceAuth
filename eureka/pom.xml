@@ -15,7 +15,6 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
-        <spring-cloud.zipkin.version>2.1.0.RELEASE</spring-cloud.zipkin.version>
         <spring-cloud-netflix-eureka-server.version>2.1.0.RELEASE</spring-cloud-netflix-eureka-server.version>
     </properties>
 
@@ -24,11 +23,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
             <version>${spring-cloud-netflix-eureka-server.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zipkin</artifactId>
-            <version>${spring-cloud.zipkin.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
