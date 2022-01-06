@@ -3,8 +3,8 @@ server:
 
 eureka:
   instance:
-    hostname: gate.herokuapp.com
-    homePageUrl: https://${eureka.instance.hostName}/
+    hostname: becomethebest.herokuapp.com
+    homePageUrl: https://${eureka.instance.hostname}/
   client:
     serviceUrl:
       defaultZone: http://eureka.herokuapp.com/eureka/
