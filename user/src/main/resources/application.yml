@@ -29,5 +29,29 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
+  oauth2:
+    client:
+      client-id: auth-client-id
+      client-secret: auth-client-secret
+      scope: auth
+  social:
+    facebook:
+      appId: 123123
+      appSecret: 321321
+    google:
+      appId: 123123
+      appSecret: 321321
 
+clientApp:
+  google:
+    appId: 112233.apps.googleusercontent.com
+    IOSAppId: 112233.apps.googleusercontent.com
+    androidAppId: 112233.apps.googleusercontent.com
+  clientApp:
+    apple:
+      clientId: com.MickalSingh.auth-url-app
+      keyId: V29RT8V7LW
+      teamId: G2LKY7B4A9
+      url: G2LKY7B4A9.com.MickalSingh.auth-url-app
+      certificate: AuthKey_V29RT8V7LW.p8
 
