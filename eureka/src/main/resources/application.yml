@@ -11,6 +11,6 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: ${EUREKA_URI:http://${eureka.instance.hostname}:${server.port}/eureka/}
+      defaultZone: https://becomethebest.herokuapp.com:8761/eureka/
   instance:
     hostname: becomethebest.herokuapp.com
