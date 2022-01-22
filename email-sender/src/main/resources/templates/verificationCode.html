@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+    <p th:text="'Hi ' + ${fullName} + ' ,'"></p>
+    <p>Welcome to Pryme time.</p>
+    <p>Your account is almost ready, however you need to confirm the email address by following the link below:</p>
+    <a th:href="@{${verificationUrl}}" th:text="${verificationUrl}" ></a>
+    <br/>
+    <p>Or use this code:</p>
+    <p th:text="${code}"></p>
+    <p>If this wasn't you, please ignore this email.</p>
+    <p>Thanks</p>
+    <p>Pryme Time Team</p>
+</body>
+</html>

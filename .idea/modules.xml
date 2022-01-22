@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/eureka/eureka.iml" filepath="$PROJECT_DIR$/eureka/eureka.iml" />
-      <module fileurl="file://$PROJECT_DIR$/event/event.iml" filepath="$PROJECT_DIR$/event/event.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gate/gate.iml" filepath="$PROJECT_DIR$/gate/gate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/email-sender/email-sender.iml" filepath="$PROJECT_DIR$/email-sender/email-sender.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssport-app/ssport-app.iml" filepath="$PROJECT_DIR$/ssport-app/ssport-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/ssportup.iml" filepath="$PROJECT_DIR$/ssportup.iml" />
-      <module fileurl="file://$PROJECT_DIR$/user/user.iml" filepath="$PROJECT_DIR$/user/user.iml" />
     </modules>
   </component>
 </project>
