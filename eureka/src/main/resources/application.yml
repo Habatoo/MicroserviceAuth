@@ -2,17 +2,15 @@ server:
   port: ${PORT:8761}
 
 spring:
+  profiles: peer
   application:
     name: eureka
 
 eureka:
-  server:
-    wait-time-in-ms-when-sync-empty: 0
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://${eureka.instance.hostname}:${server.port}/eureka/}
   instance:
-    prefer-ip-address: false
-    hostname: ${EUREKA_HOSTNAME:localhost}
+    hostname: becomethebest.herokuapp.com
