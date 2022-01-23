@@ -8,8 +8,8 @@ spring:
 
 eureka:
   client:
-    registerWithEureka: true
-    fetchRegistry: true
+    registerWithEureka: false
+    fetchRegistry: false
     serviceUrl:
       defaultZone: https://becomethebest.herokuapp.com/eureka/
   instance:

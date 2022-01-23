@@ -1,16 +1,16 @@
 server:
-  port: ${PORT:8900}
+  port: ${PORT}
 
 eureka:
   instance:
-    hostname: user.herokuapp.com
+    hostname: becomethebest.herokuapp.com
     homePageUrl: https://${eureka.instance.hostName}/
     home-page-url-path: https://${eureka.instance.hostName}
     non-secure-port-enabled: true
     secure-port-enabled: true
   client:
     serviceUrl:
-      defaultZone: http://eureka.herokuapp.com/eureka/
+      defaultZone: https://eureka.herokuapp.com/eureka/
       non-secure-port: 80
       secure-port: 443
 

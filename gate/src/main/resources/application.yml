@@ -13,7 +13,7 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     serviceUrl:
-      defaultZone: http://eureka.herokuapp.com/eureka/
+      defaultZone: https://eureka.herokuapp.com/eureka/
 
 ribbon:
   eureka:
