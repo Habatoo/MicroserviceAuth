@@ -1,5 +1,5 @@
 server:
-  port: ${PORT:8761}
+  port: ${PORT}
 
 spring:
   profiles: peer
@@ -11,6 +11,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: https://becomethebest.herokuapp.com:8761/eureka/
+      defaultZone: https://becomethebest.herokuapp.com/eureka/
   instance:
+    non-secure-port: 80
     hostname: becomethebest.herokuapp.com

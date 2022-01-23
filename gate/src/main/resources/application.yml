@@ -1,11 +1,17 @@
+spring:
+  application:
+    name: gate
+
 server:
-  port: ${PORT:8080}
+  port: ${PORT}
 
 eureka:
   instance:
     hostname: becomethebest.herokuapp.com
     homePageUrl: https://${eureka.instance.hostname}/
   client:
+    fetch-registry: true
+    register-with-eureka: true
     serviceUrl:
       defaultZone: http://eureka.herokuapp.com/eureka/
 
@@ -13,9 +19,15 @@ ribbon:
   eureka:
     enabled: true
 
-spring:
-  application:
-    name: gate
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include:
+          - routes
+          - info
+          - health
 
 zuul:
   routes:
